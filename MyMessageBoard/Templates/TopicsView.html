@@ -1,0 +1,30 @@
+﻿<div>
+    <div class="message-header">
+        <h1>Message Board</h1>
+        <p class="lead">Latest Messages...</p>
+        <div>
+            Message Count: {{ data.topics.length }}
+        </div>
+    </div>
+    <div>
+        <a href="#/newmessage">Add new message</a>
+    </div>
+    <!--zen coding-->
+    <!--.messages>(.message.row>(.title.col-md-10>lorem5)+(.date.col-md-2>{Feb 12 2015})+(.contents.col-md-12>lorem)+(.toolbar.col-md-12>button.btn.btn-primary.reply-button>{Reply})+.replies.col-md-12)*5-->
+    <div class="progress progress-striped active" ng-show="isBusy">
+        <div class="progress-bar" style="width: 100%;"></div>
+    </div>
+    <div class="messages">
+        <div class="message row" ng-repeat="topic in data.topics">
+            <div class="title col-md-10">
+                <a ng-href="#/message/{{ topic.id }}">{{ topic.title }}</a>
+            </div>
+            <div class="date col-md-2">
+                {{ topic.created | date:"medium" }}
+            </div>
+            <div class="contents col-md-12">
+                {{ topic.body }}
+            </div>
+        </div>
+    </div>
+</div>
