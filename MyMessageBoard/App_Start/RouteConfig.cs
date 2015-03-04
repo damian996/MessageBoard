@@ -16,7 +16,7 @@ namespace MyMessageBoard
             routes.MapRoute(
                 name: "MyMessages",
                 url: "MyMessages",
-                defaults: new { controller = "Home", action="MyMessages" }
+                defaults: new { controller = "Home", action="Index" }
                 );
 
             routes.MapRoute(

@@ -62,7 +62,6 @@ namespace MyMessageBoard.Controllers
 
             return View();
         }
-        [Authorize]
         public ActionResult MyMessages()
         {
             return View();
